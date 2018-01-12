@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<!-- Meta -->
+	<meta charset="UTF-8" />
+	<title>Vue.JS Testing</title>
+
+	<!-- Styles -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="styles/index.processed.css">
+
+	<!-- Scripts -->
+	<script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/2.0.0/vuex.min.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+</head>
+
+<body>
+	<div id="page-load-spinner" class="page-load-spinner loading text-center display-1 mx-auto my-5">
+		<i class="fa fa-spinner fa-spin fa-2x" aria-hidden="true"></i>
+		<h3>Loading Data...</h3>
+	</div>
+	<div class="container-fluid">
+		<div id="dashboard" class="dashboard my-4">
+			<h1>Error Log Viewer: Dashboard</h1>
+			<div class="d-flex justify-content-between align-items-center mb-3">
+				<div><a href="#" onClick={this._handleClick.bind(this)}>View all errors</a></div>
+			</div>
+
+
+			<div id="app">
+				<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/vue-post-photo.jpg" class="main-photo">
+				<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/vue-main-profile.jpg" class="main-profile">
+				<div class="main-info">
+					<span class="name">Julianne Delfina</span> 
+					<h3>"It's lovely after it rains"</h3>
+				</div>
+				<hr>
+				<ul>
+					<li
+						is="individual-comment"
+						v-for="comment in comments"
+						v-bind:commentpost="comment"
+					></li>
+				</ul>
+				<input
+					v-model="newComment"
+					v-on:keyup.enter="addComment"
+					placeholder="Add a comment"
+				>
+				<div is="dash-card">Some IP Addresses</div>
+				<div is="dash-card">Some Other Stuff</div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+		</div>
+	</div>
+
+
+<!-- This is the Individual Comment Component -->
+<script type="text/x-template" id="comment-template">
+<li> 
+	<img class="post-img" :src="commentpost.authorImg" /> 
+	<small>{{ commentpost.author }}</small>
+	<p class="post-comment">"{{ commentpost.text }}"</p>
+</li>
+</script>
+
+
+<script type="text/x-template" id="dash-card-template">
+	<div class="card border-primary mb-3">
+		<div class="card-header text-white bg-primary d-flex justify-content-between align-items-center"><slot></slot><i class="fa fa-chevron-circle-up fa-2x" aria-hidden="true"></i></div>
+		<div class="card-body px-0 py-0 collapse show">
+			<ul class="list-group">
+				<li class="list-group-item d-flex justify-content-between align-items-center border-primary">
+					<a href="#">123.45.678.9</a>
+					<a href="#"><span class="badge badge-primary badge-pill">13</span></a>
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-center border-primary">
+					<a href="#">123.45.678.9</a>
+					<a href="#"><span class="badge badge-primary badge-pill">8</span></a>
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-center border-primary">
+					<a href="#">123.45.678.9</a>
+					<a href="#"><span class="badge badge-primary badge-pill">5</span></a>
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-center border-primary">
+					<a href="#">123.45.678.9</a>
+					<a href="#"><span class="badge badge-primary badge-pill">5</span></a>
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-center border-primary">
+					<a href="#">123.45.678.9</a>
+					<a href="#"><span class="badge badge-primary badge-pill">5</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</script>
+
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	<script src="scripts/components.js"></script>
+	<script src="scripts/index.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
