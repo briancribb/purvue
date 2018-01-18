@@ -1,0 +1,10 @@
+.page-load-spinner {
+	display:none;
+}
+
+.loading .page-load-spinner {
+	display:block;
+}
+.loading .app {
+	display:block;
+}

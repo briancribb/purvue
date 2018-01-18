@@ -1,9 +1,11 @@
-Vue.component('individual-comment', {
-	template: '#comment-template',
-	props: ['commentpost']
-});
-
 Vue.component('dash-card', {
 	template: '#dash-card-template',
-	props: ['text']
+	props: ['colorClass', 'listArray'],
+	data: function() {
+		console.log(['this', this]);
+		return {
+			arrList: this.listArray,
+			color: this.colorClass
+		}
+	}
 });
