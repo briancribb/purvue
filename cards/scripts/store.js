@@ -1,6 +1,5 @@
 // Make sure to call Vue.use(Vuex) first if using a module system
 
-Vue.use(Vuex);
 const store = new Vuex.Store({
 	state: {
 		arrIP: [
