@@ -39,8 +39,8 @@
 				Using kebab-case here, but in the component these props are camel-cased.
 				https://vuejs.org/v2/guide/components.html#camelCase-vs-kebab-case
 				-->
-				<div is="dash-card" :list-array="arrIP" color-class="primary">Some IP Addresses</div>
-				<div is="dash-card" :list-array="arrIP" color-class="info">Some Other Stuff</div>
+				<div v-on:test="handleTest" is="dash-card" :server="objServer1" color-class="primary">Some IP Addresses</div>
+				<div is="dash-card" :server="objServer2" color-class="info">Some Other Stuff</div>
 			</div>
 		</div>
 	</div>
@@ -59,12 +59,12 @@
 
 
 <script type="text/x-template" id="dash-card-template">
-	<div :class="`card border-${colorClass} mb-3`">
-		<div :class="`card-header text-white bg-${colorClass} d-flex justify-content-between align-items-center`"><slot></slot><i class="fa fa-chevron-circle-up fa-2x" aria-hidden="true"></i></div>
+	<div :id="`${server.name}`" :class="`card border-${colorClass} mb-3`">
+		<div :class="`card-header text-white bg-${colorClass} d-flex justify-content-between align-items-center`"><slot></slot><i :class="`fa fa-chevron-circle-${server.toggleClass} fa-2x`" aria-hidden="true"></i></div>
 		<div class="card-body px-0 py-0 collapse show">
 			<ul class="list-group">
 				<li v-for="item in arrList" :class="`list-group-item d-flex justify-content-between align-items-center border-${colorClass}`">
-					<a href="#">{{item.number}}</a>
+					<a v-on:click="increment" href="#">{{item.number}}</a>
 					<a href="#"><span :class="`badge badge-${colorClass} badge-pill`">{{item.quantity}}</span></a>
 				</li>
 			</ul>
@@ -75,7 +75,6 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-	<script src="scripts/store.js"></script>
 	<script src="scripts/components.js"></script>
 	<script src="scripts/index.js"></script>
 
