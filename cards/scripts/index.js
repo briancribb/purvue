@@ -87,10 +87,6 @@ new Vue({
 			console.log(['decrement()', this]);
 			this.arrIP[0].quantity ++;
 		},
-		decrement: function () {
-			//console.log(['decrement()', this]);
-			this.arrIP[0].quantity --;
-		},
 		addComment: function () {
 			const newCommentObj = {
 				text: this.newComment,
