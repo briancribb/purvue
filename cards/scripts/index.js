@@ -1,6 +1,6 @@
 
 
-new Vue({
+let VM = new Vue({
 	el: '#app',
 	data() {
 		return {
@@ -44,31 +44,31 @@ new Vue({
 				arrIP: [
 					{ 
 						number:		'678.90.123.4',
-						quantity:	2
+						quantity:	5
 					},
 					{ 
-						number:		'234.56.789.0',
-						quantity:	8
+						number:		'234.90.456.0',
+						quantity:	23
 					},
 					{ 
 						number:		'456.78.901.2',
-						quantity:	12
+						quantity:	14
 					},
 					{ 
-						number:		'123.45.678.9',
-						quantity:	13
+						number:		'789.45.678.9',
+						quantity:	55
 					},
 					{ 
-						number:		'345.67.890.1',
-						quantity:	4
+						number:		'678.90.890.1',
+						quantity:	11
 					},
 					{ 
-						number:		'567.89.012.3',
-						quantity:	13
+						number:		'567.89.234.3',
+						quantity:	2
 					},
 					{ 
-						number:		'789.01.234.5',
-						quantity:	1
+						number:		'901.01.123.5',
+						quantity:	21
 					}
 				]
 			}
